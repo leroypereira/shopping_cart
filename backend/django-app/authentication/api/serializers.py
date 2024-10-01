@@ -4,8 +4,8 @@ from authentication.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
-    """ Used to retrieve user info """
+    """Used to retrieve user info"""
 
     class Meta:
         model = User
-        fields = '__all__'
+        fields = "__all__"
