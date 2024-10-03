@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+}
+
+.signup {
+  margin: 50px;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.formfield {
+  margin: 10px;
+}
+
+.login {
+  margin: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dashboard{
+  margin:5em;
+  align-items: center;
+}
+
+.background{
+  display:flow-root;
+  background-image:url("/img/landing_page.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
