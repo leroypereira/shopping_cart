@@ -35,3 +35,12 @@
   margin:5em;
   align-items: center;
 }
+
+.background{
+  display:flow-root;
+  background-image:url("/img/landing_page.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

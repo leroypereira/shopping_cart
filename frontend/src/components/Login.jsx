@@ -2,17 +2,18 @@ import React, { useState } from 'react'
 import { Button, TextField,Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import { authenticate } from '../services/authenticate';
-import userpool from '../userpool'
+import useAuthStore from '../store/AuthStore';
 
 const Login = () => {
 
   const Navigate = useNavigate();
-
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailErr, setEmailErr] = useState('');
   const [passwordErr, setPasswordErr] = useState('');
   const [loginErr,setLoginErr]=useState('');
+  const {setIDToken, setAccessToken, setRefreshToken} = useAuthStore((state)=>state);
 
   const formInputChange = (formField, value) => {
     if (formField === "email") {
@@ -54,7 +55,7 @@ const Login = () => {
     validation()
       .then((res) => {
         if (res.email === '' && res.password === '') {
-          authenticate(email,password)
+          authenticate(email,password, setIDToken, setAccessToken, setRefreshToken)
           .then((data)=>{
             setLoginErr('');
             Navigate('/dashboard');

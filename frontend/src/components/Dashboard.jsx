@@ -3,14 +3,14 @@ import React,{useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import userpool from '../userpool'
 import { logout } from '../services/authenticate';
-
+import useAuthStore from '../store/AuthStore';
 const Dashboard = () => {
 
   const Navigate = useNavigate();
+  const {idToken} = useAuthStore((state)=>state);
 
   useEffect(()=>{
     let user=userpool.getCurrentUser();
-    console.log(user);
     if(!user){
       Navigate('/login');
     }

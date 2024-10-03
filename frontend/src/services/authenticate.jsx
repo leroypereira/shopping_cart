@@ -1,6 +1,8 @@
 import { AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js';
 import userpool from '../userpool';
-export const authenticate=(Email,Password)=>{
+
+export const authenticate=(Email,Password, setIDToken, setAccessToken, setRefreshToken)=>{
+
     return new Promise((resolve,reject)=>{
         const user=new CognitoUser({
             Username:Email,
@@ -15,7 +17,9 @@ export const authenticate=(Email,Password)=>{
         user.authenticateUser(authDetails,{
             onSuccess:(result)=>{
                 console.log("login successful");
-                console.log(result)
+                setIDToken(result.getIdToken())
+                setAccessToken(result.getAccessToken())
+                setRefreshToken(result.getRefreshToken())
                 resolve(result);
             },
             onFailure:(err)=>{
@@ -31,3 +35,4 @@ export const logout = () => {
     user.signOut();
     window.location.href = '/';
 };
+

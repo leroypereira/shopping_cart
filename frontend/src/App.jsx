@@ -18,6 +18,7 @@ function App() {
   },[]);
 
   return (
+    <div className='background'>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
