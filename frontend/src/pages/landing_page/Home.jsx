@@ -12,7 +12,7 @@ const Home = () => {
                     <Button style={{margin:'10px'}} variant='contained' onClick={()=>Navigate('/signup')}>
                         Signup
                     </Button>
-                    <Button style={{margin:'10px'}} variant='contained' onClick={()=>Navigate('/login')}>
+                    <Button style={{margin:'10px'}} variant='contained' onClick={()=>Navigate('/signin')}>
                         Login
                     </Button>
                 </div>

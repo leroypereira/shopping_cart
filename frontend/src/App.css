@@ -37,10 +37,10 @@
 }
 
 .background{
-  display:flow-root;
+  /* display:flow-root;
   background-image:url("/img/landing_page.jpg");
   height: 100vh;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
